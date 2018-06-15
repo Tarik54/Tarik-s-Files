@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Geolocation Boston</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+ <style type="text/css">
+ html { 
+		height: 100% 
+		}
+ body { 
+		height: 100%; 
+		margin: 0; 
+		padding: 0 
+		}
+ #map_canvas { 
+				height: 100% 
+				}
+ </style>
+ <script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAivWZXyY5fAbrEHzSS4
+MuHX3lu7FWHxtc&sensor=true">
+ </script>
+ <script type="text/javascript">
+	var center = new google.maps.LatLng(42.35670,-71.05690);
+    var ONC = new google.maps.LatLng(42.3664863,-71.0544954);
+	var Fenway = new google.maps.LatLng(42.346268,-71.095764);
+	var NEA = new google.maps.LatLng(42.359215,-71.049149);
+	var USS = new google.maps.LatLng(42.369915187,-71.0533464533);
+	var OSH = new google.maps.LatLng(42.3587086,-71.0578287);
+	var John = new google.maps.LatLng(42.3095337619,-71.0337848649);
+	var ONCmarker,Fenwaymarker, NEAmarker, USSmarker, OSHmarker, Johnmarker
+	var myMap;
+    function initialize() {
+    var mapOptions = {
+      zoom: 12,
+      center: center,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+    myMap = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+	}
+	function showONC(){
+    var ONCmarker = new google.maps.Marker({
+						position: ONC,
+						map:myMap,
+						title: "Old North Church",
+						animation:google.maps.Animation.DROP
+					});
+	}
+	function showFenway(){
+	var Fenwaymarker = new google.maps.Marker({
+						position: Fenway,
+						map:myMap,
+						title: "Fenway Park",
+						animation:google.maps.Animation.DROP
+					});
+	}
+	function showNEA(){
+    var NEAmarker = new google.maps.Marker({
+						position: NEA,
+						map:myMap,
+						title: "New England Aquarium",
+						animation:google.maps.Animation.DROP
+					});
+	}
+	function showUSS(){
+    var USSmarker = new google.maps.Marker({
+						position: USS,
+						map:myMap,
+						title: "USS Constitution",
+						animation:google.maps.Animation.DROP
+					});
+	}
+	function showOSH(){
+    var OSHmarker = new google.maps.Marker({
+						position: OSH,
+						map:myMap,
+						title: "Old State House",
+						animation:google.maps.Animation.DROP
+					});
+	}
+	function showJohn(){
+    var Johnmarker = new google.maps.Marker({
+						position: John,
+						map:myMap,
+						title: "John F. Kennedy Presidential Library and Museum",
+						animation:google.maps.Animation.DROP
+					});
+	}
+  </script>
+  </head>
+  <body onload="initialize()">
+    <div id="mapCanvas" style="width: 89%; height: 85%;">map div</div>
+    <button onclick="showONC()">Locate Old North Church</button>
+	<button onclick="showFenway()">Locate Fenway Park</button>
+	<button onclick="showNEA()">Locate New England Aquarium</button>
+	<button onclick="showUSS()">Locate USS Constitution</button>
+	<button onclick="showOSH()">Locate Old State House</button>
+	<button onclick="showJohn()">Locate John F. Kennedy Presidential Library and Museum</button>
+<footer>
+<p>Tarik McLean</p>
+<p>IT 614</p>
+<p>April 21, 2018</p>
+<p>Lab Assignment 12A</p>
+</footer>
+</body>
+</html>

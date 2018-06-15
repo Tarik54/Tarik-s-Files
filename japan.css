@@ -1,0 +1,44 @@
+/* CSS for Japan */
+
+h1 {
+	  color:#F0E68C;
+	  text-align:center;
+	  letter-spacing:3em;
+	  background-color:#FFFAF0;
+	  padding-top:10px;
+	  padding-bottom:10px;
+	  margin-top:0px;
+	  border:5px solid red;
+	  background-image:url(japan.jpg);
+	  background-repeat: no-repeat;
+	  background-size: cover;
+      background-position: center;
+
+
+	  }
+
+h2 {
+	 font-family:fantasy;
+	 color:#000080;
+	 }
+	 
+#links a:hover {
+					background-color:navy;
+					text-decoration:none;
+					color:green; 
+				 }
+
+	table.course th {
+				  color:blue;
+		          background-color:green;
+		          font-family: Arial, Helvetica, sans-serif;
+		          font-size:130%;		          
+		          }	
+				
+.left        {
+				font-size:130%;
+				}
+				
+h1	{
+		font-family:cursive;
+		}

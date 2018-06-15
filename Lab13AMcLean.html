@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeToggle();
+		$("#sc").fadeToggle("slow");
+		$("#yc").fadeToggle(3000);
+		$("#hide").click(function(){
+        $("h2").hide();
+		$("#h").css("color", "red")
+            .slideUp(2000)
+            .slideDown(2000);
+		$("#g").animate({left: '250px'});
+		});
+		});
+	
+});
+
+</script>
+<style>
+
+body {
+		background-color: orange;
+		}
+
+#menu {
+		        width: 48%;
+				background: red;
+				font-size: 15px;
+				font-family: Arial, Helvetica, sans-serif;
+				padding:1%;
+				float:left;
+		}
+		
+#sidescroll {
+				width: 48%;
+				background: yellow;
+				font-size: 15px;
+				font-family: Arial, Helvetica, sans-serif;
+				padding:1%;
+				float:right;
+				}
+				
+
+</style>
+		
+
+<meta charaset="utf-8">
+<title>HTML Form</title>
+</head>
+<body>
+<header>
+<h1 id = "h" style = "text-align:center;color:green">Castles in Africa</h1>
+<h3>Clicking the button will also allow the heading above to slide up and down. Try clicking the "click to hide button twice."</h3>
+</header>
+<button id="hide">Click to hide the headings</button>
+<button>Click to fade in/out the images</button>
+<br>
+<div id = "menu">
+<h2 style = "color:orange">Castle of Good Hope</h2>
+<div id = "div1"><img src = "gh.jpg" alt = "castle 1" height = "200" width = "450" style = "margin-right:20px"></div>
+<details><summary>Information on the Castle of Good Hope</summary>
+<p>This famous castle was erected by the Dutch East India 
+Company in 1666 and is the oldest colonial structure in South Africa. During the Second Boer War, 
+prisoners were kept within the confines in refitted jail cells. The cells were never removed, 
+and the poor conditions can still be seen today. The Castle of Good Hope is currently home to the Castle Military Museum.</P>
+</details>
+<h2 style = "color:orange">Saladin Citadel</h2>
+<div id = "sc"><img src = "citadel1.jpg" alt = "castle2" height = "200" width = "450"></div>
+<details><summary>Information on the Saladin Citadel</summary>
+<p>Construction on the walls of the Saladin Citadel began as far back as 1176. 
+It was built to fortify Cairo from invasions during the Crusades. Over the centuries various features 
+were added, such as the minarets designed in the Ottoman style of the 19th century. The Citadel is 
+currently a historic site and houses several museums.</p>
+</details>
+</div>
+<div id = "sidescroll">
+<h2 style = "color:orange">Yohannes Castle</h2>
+<div id = " yc"><img src = "gondar.jpg" alt = "castle3" height = "200" width = "450"></div>
+<details><summary>Information on the Yohannes Castle</summary>
+<p>Located in Gondar, which once served as the capital of the Ethiopian Empire, 
+Yohannes Castle was built in the 17th century for Emperor Yohannes I. 
+It is said to be as great as the palace of King Solomon.</p>
+</details>
+<h2 style = "color:orange">Great Zimbabwe</h2>
+<div id = "g"><img src = "greatz.jpg" alt = "castle4" height = "200" width = "450"></div>
+<details><summary>Information on the Great Zimbabwe</summary>
+<p>Once housing the capital of the Kingdom of Great Zimbabwe (11th to 13th centuries), 
+the ruins of Great Zimbabwe constitute the largest stone structure in sub-Saharan Africa. 
+Amazingly, these giant walls were all built without mortar. Similar sites are scattered 
+across this region of Africa, but Great Zimbabwe is the largest and remains the most 
+impressive to this day, truly deserving of its nomenclature.</p>
+</details>
+</div>
+<br>
+<footer id = "end">
+<p>Tarik McLean</p>
+<p>IT 614</p>
+<p>April 29, 2018</p>
+<p>Lab Assignment 13A</p>
+</footer>
+</body>
+</html>

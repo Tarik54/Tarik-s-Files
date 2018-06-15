@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<title>Search Anything</title> 	 
+ 	<style type='text/css'>
+	html { 
+		height: 100% 
+		}
+ body { 
+		height: 100%; 
+		margin: 0; 
+		padding: 0 
+		}
+ #map_canvas { 
+				height: 100% 
+				}
+	</style>
+	<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAivWZXyY5fAbrEHzSS4
+MuHX3lu7FWHxtc&sensor=true">
+ </script>
+ 
+ <script>
+function processResult(JsonResult){	
+var mapOptions = {
+zoom: 13,
+center: new google.maps.LatLng(lat,lon),
+mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+		};
+		
+
+var myMap = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+var infowindow = new google.maps.InfoWindow({});
+
+
+var results = JsonResult.query.results.Result;
+for(var m = 0; m < results.length; m++){
+
+				
+ var markerObject = new google.maps.Marker({
+ position: new google.maps.LatLng(results[m].Latitude, results[m].Longitude),
+ map: myMap
+ 
+		});
+
+	google.maps.event.addListener(markerObject, 'click', (function (markerObject, m) {
+	return function () {
+	infowindow.setContent(results[m].Title + "<br>" + results[m].Address + "<br>" + results[m].City + "<br>" + results[m].Phone);
+	infowindow.open(myMap, markerObject);
+	
+				}
+				
+		})(markerObject, m));
+			 			
+			}
+
+		}
+	</script>
+	<script>
+	
+	function displayLocation() {
+		navigator.geolocation.getCurrentPosition(showPosition,displayError);
+	}
+	
+	function showPosition(position){
+		lat = position.coords.latitude;
+		lon = position.coords.longitude;
+		initialize();
+
+	}
+
+	function displayError(error){
+		alert('ERROR(' + error.code + '): ' + error.message);
+	}
+	
+	function initialize() {
+		var mapOptions = {
+			zoom: 13,
+			center: new google.maps.LatLng(lat,lon),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+		
+	var myMap = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+	var positionObject = new google.maps.LatLng(lat,lon);
+	var markerObject = new google.maps.Marker({
+	position: positionObject,
+	title: "This is the location",
+	map: myMap
+	});
+	
+	searchNow();
+	}
+	
+	function searchNow(){
+			
+			var searchTypeInput = document.getElementById("searchType").value;
+			var URL1 = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search(0%2C20)%20where%20query%3D%22";
+			var URL2=searchTypeInput;
+			var URL3="%22%20and%20longitude%3D%22";
+			var URL4 = lon;
+			var URL5="%22%20and%20latitude%3D%22";
+			var URL6 = lat;
+			var URL7="%22&format=json&diagnostics=true&callback=processResult";
+			var searchURL=URL1+URL2+URL3+URL4+URL5+URL6+URL7;
+			var newOutput = document.createElement('script');
+			newOutput.src=searchURL;
+			document.getElementById('outputDiv').appendChild(newOutput);
+	}
+	
+	
+
+
+</script>
+</head> 
+
+<body>  
+<br>
+<div id="outputDiv"></div>
+<form name="searchForm" method="GET" action="javascript:displayLocation()">
+<div>
+Search for: <input id="searchType" type="text"> 			
+<input type="submit" value="My Area">
+</div>
+</form>		
+<br>
+<div id="mapCanvas" style="width: 80%; height: 80%;"></div>
+<footer>
+<p>Tarik McLean</p>
+<p>IT 614</p>
+<p>April 21, 2018</p>
+<p>Lab Assignment 12B</p>
+</footer>		
+</body> 	
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charaset="utf-8">
+<title>HTML Form</title>
+<style>
+input:invalid {
+ border: 5px solid red;
+ background-color:pink;
+}
+input:valid {
+ border: 3px solid blue;
+}
+
+form{
+background-image:url("formback2.jpg");
+margin:auto;
+width:600px;
+height:900px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-style: oblique;
+line-height: 30px;
+font-weight: bold;
+color: yellow;
+border-radius: 15px;
+padding:10px;
+border: 1px solid #999;
+border: inset 1px solid #333;
+box-shadow: 2px 2px 8px blank;
+
+
+</style>
+</head>
+<body>
+<form>
+<h1>Movie Rental Form:</h1>
+
+Type your Last Name: <input type="text" name="last name" placeholder = "Enter Last Name" pattern="[A-Z].*" required><P>
+Type your Telephone number: <input type="tel" name="telephone" placeholder = "Enter telephone number" maxlength = "10" required><P>
+Enter Credit Card Number: <input type="text" name="creditcard" maxlength = "16" required>
+<div>Enter Expiration Date: <input type="text" name="expirationdate" pattern = "3/15" required></div>
+<p>Lists of movies:</p>
+<input type="radio" name="movie" value=1> Harry Potter and the Chamber of Secrets <p>
+<input type="radio" name="movie" value=2> Black Panther <p>
+<input type="radio" name="movie" value=3> The Godfather <p>
+<input type="radio" name="movie" value=4> Godzilla <p>
+<input type="radio" name="movie" value=5> The Matrix <p>
+
+Enter date: <input type="date" name="mydate" required><P>
+Enter time: <input type="time" name="myTime" required><P>
+Enter your email: <input type="email" name="myEmail" placeholder = "example@gmail.com"  required><P>
+Enter zip code: <input type="text" name="zipcode" placeholder = "ex: 10291" maxlength = "5" required>
+<br/>
+<div><input type="range" name="myRange" min=10 max=90 step=5 value=50></div>
+<br/>
+<div><input type="submit" value="submit"></div>
+</form>
+<footer>
+<p>Tarik McLean</p>
+<p>IT 614</p>
+<p>March 11, 2018</p>
+<p>Lab Assignment 7B</p>
+</footer>
+</body>
+</html>
